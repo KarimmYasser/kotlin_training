@@ -6,9 +6,13 @@ fun main() {
     tasks.add(Task("Do assignment", true))
     tasks.add(Task("Run 10 Kilometers", false))
     for (task in tasks) {
-        val status = if (task.isDone) "✅" else "❌"
-        println("$status ${task.title}")
+        printTask(task)
     }
 }
 
 data class Task(val title: String, var isDone: Boolean)
+
+fun printTask(task: Task) {
+    val status = if (task.isDone) "✅" else "❌"
+    println("$status ${task.title}")
+}
